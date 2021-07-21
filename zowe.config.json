@@ -1,0 +1,64 @@
+{
+    "$schema": "./zowe.schema.json",
+    "profiles": {
+        "lpar1": {
+            "properties": {
+                "host": ""
+            },
+            "profiles": {
+                "zosmf": {
+                    "type": "zosmf",
+                    "properties": {
+                        "port": 443
+                    },
+                    "secure": []
+                },
+                "tso": {
+                    "type": "tso",
+                    "properties": {
+                        "account": "",
+                        "codePage": "1047",
+                        "logonProcedure": "IZUFPROC"
+                    },
+                    "secure": []
+                },
+                "ssh": {
+                    "type": "ssh",
+                    "properties": {
+                        "port": 22
+                    },
+                    "secure": []
+                },
+                "endevor": {
+                    "type": "endevor",
+                    "properties": {},
+                    "secure": []
+                },
+                "endevor-location": {
+                    "type": "endevor-location",
+                    "properties": {},
+                    "secure": []
+                }
+            }
+        },
+        "my_base": {
+            "type": "base",
+            "properties": {
+                "rejectUnauthorized": true
+            },
+            "secure": [
+                "user",
+                "password"
+            ]
+        }
+    },
+    "defaults": {
+        "zosmf": "lpar1.zosmf",
+        "tso": "lpar1.tso",
+        "ssh": "lpar1.ssh",
+        "endevor": "lpar1.endevor",
+        "endevor-location": "lpar1.endevor-location",
+        "base": "my_base"
+    },
+    "plugins": []
+}
