@@ -1,2 +1,2 @@
-# projectB
-Project B
+# Project B readMe
+Hello Project B
